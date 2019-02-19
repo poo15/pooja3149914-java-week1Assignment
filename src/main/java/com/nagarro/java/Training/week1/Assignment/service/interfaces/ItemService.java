@@ -5,13 +5,13 @@
 */
 package com.nagarro.java.Training.week1.Assignment.service.interfaces;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.nagarro.java.Training.week1.Assignment.dto.Item;
 
 public interface ItemService {
 	
-	 static ArrayList<Item> itemList=new ArrayList<Item>();
+	 //static ArrayList<Item> itemList=new ArrayList<Item>();
 
-	 void calculateTax();
+	 List<Item> getAllItems();
 }

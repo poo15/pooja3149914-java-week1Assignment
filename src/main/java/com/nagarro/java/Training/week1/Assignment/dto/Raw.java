@@ -5,25 +5,25 @@
 */
 package com.nagarro.java.Training.week1.Assignment.dto;
 
-import com.nagarro.java.Training.week1.Assignment.service.interfaces.ItemService;
 
-public class Raw extends Item implements ItemService {
+public class Raw extends Item {
 	
 	public Raw(String name, double price, int quantity) {
 		super(name, price,quantity);
+		this.getTax();
+		this.getFinalPrice();
 	}
 	
-	/**
-	 * Calculate the tax for the item type object
-	 * and set the tax and final price for the item
-	 */
-	public void calculateTax(){
-		
-		double tax = (12.5 * getPrice() ) / 100;
-		setTax(tax);
-		setFinalPrice(getTax() + getPrice());
-	
+	@Override
+	public double getTax() {
+		tax = (12.5 * super.getPrice() ) / 100;
+		return tax;
 	}
-
+	
+	@Override
+	public double getFinalPrice() {
+		finalPrice = super.getPrice()+super.getTax();
+		return finalPrice;
+	}
 	
 }

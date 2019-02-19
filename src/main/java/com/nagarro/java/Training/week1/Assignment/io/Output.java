@@ -5,7 +5,9 @@
 */
 package com.nagarro.java.Training.week1.Assignment.io;
 
-import com.nagarro.java.Training.week1.Assignment.service.interfaces.ItemService;
+import java.util.List;
+
+import com.nagarro.java.Training.week1.Assignment.dto.Item;
 
 public class Output {
 
@@ -13,9 +15,9 @@ public class Output {
 	 * This method print all the items of the list
 	 */
 	
-	public static void showItemDetails() {
+	public static void showItemDetails(List<Item> items) {
 		
-		ItemService.itemList.forEach(item -> System.out.println(item));
+		items.forEach(item -> System.out.println(item));
 		
 	}
 }

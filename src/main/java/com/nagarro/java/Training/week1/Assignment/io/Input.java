@@ -131,22 +131,25 @@ public class Input {
 	 */
    	
     public Item constructItemObject(){
-    	Item item = new Item();   
+    	Item item = null;   
 	    switch(ItemType.valueOf(itemType.toUpperCase())){
 	   
 	    	case RAW:
-	    		item = new Raw(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
-	    		((Raw)item).calculateTax();
+	    		Raw rawItem = new Raw(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
+//	    		((Raw)item).calculateTax();
+	    		System.out.println("In raw");
+	    		item = rawItem;
 	    		break;
 		   
 		    case MANUFACTURED:
-		    	item = new Manufactured(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
-			    ((Manufactured)item).calculateTax();
+		    	Manufactured manufacturedItem = new Manufactured(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
+			    item = manufacturedItem;
+		    	//((Manufactured)item).calculateTax();
 				break;
 		    
 		    case IMPORTED:
-		    	item = new Imported(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
-				((Imported)item).calculateTax();
+		    	Imported importedItem = new Imported(itemName,Double.parseDouble(itemPrice),Integer.parseInt(itemQuantity)); 
+				item = importedItem;
 				break;
 	   }
 	   return item;

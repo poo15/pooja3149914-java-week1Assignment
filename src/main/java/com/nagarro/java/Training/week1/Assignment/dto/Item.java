@@ -10,8 +10,8 @@ public class Item {
 	private String name;
 	private double price;
 	private int quantity;
-	private double tax;
-	private double finalPrice;
+	protected double tax;
+	protected double finalPrice;
 	
 	public Item() {}
 	
